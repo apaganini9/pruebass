@@ -1,0 +1,115 @@
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url(../assets/font/RobotoCondensed-Regular.ttf);
+    color: black;
+    text-align: center;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fadfbf;
+    font-family: "RobotoCondensed-Regular";
+}
+
+.container {  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.3fr 0.2fr 2.4fr 0.3fr;
+    grid-template-areas:
+      "header header header"
+      "titulo titulo titulo"
+      "main main main"
+      "footer footer footer";
+  }
+  
+  .header {             
+    grid-area: header;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+    .header img {
+        width: 150px;
+    }
+    .header nav{
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        font-size: 1.4rem;
+    }
+    .header .navbar-nav {
+        padding: 20px;
+    }
+    .header .navbar-nav a:hover{
+        font-style: normal;
+        color: blanchedalmond;
+        background-color: black;
+        padding: 5px;
+    }
+  .titulo { 
+    grid-area: titulo; 
+    text-align: center;
+    padding: 5px;
+}
+  
+  .main { 
+    grid-area: main; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 0;
+    }
+.main p {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 0;
+}
+
+    .main .conBorde {
+        border: 1px solid black; 
+    }
+  
+  .footer { 
+    grid-area: footer; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: black;
+    }
+
+    .footer .autor {
+        text-align: center;
+    }
+
+    .footer .diseño {
+        color: gray;
+        font-size: 0.8rem;
+    }
+
+    /* Desktop */
+
+        @media (max-width: 1020px) {
+            .container {
+            grid-template-columns: 0.9fr 0.8fr 1fr;
+            grid-template-rows: 0.3fr 0.2fr 2.4fr 0.3fr;
+            grid-template-areas: "header header header" "titulo titulo titulo" "main main main" "footer footer footer"; } 
+            }
+
+    /* Mobile */
+
+        @media (max-width: 420px) {
+            .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            flex-wrap: wrap;
+            grid-template-areas: "header " "titulo " "main " "footer";
+            }
+            }
